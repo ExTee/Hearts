@@ -1,6 +1,6 @@
 # Hearts
-Python implementation of the game Hearts.
-Goal:
+Python implementation of the game Hearts.  
+Goal:  
   1 - Online multiplayer between players and AIs  
   2 - Good AIs (Monte-Carlo, Markove)  
   3 - Framework for ML on the game  
@@ -10,5 +10,5 @@ Goal:
 Rules can be found at: http://www.bicyclecards.com/how-to-play/hearts/
 
 ## Requirements
-  Python3 pyCardDeck  
+  Python3  pyCardDeck  
   
