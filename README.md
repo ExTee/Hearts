@@ -10,6 +10,5 @@ Goal:
 Rules can be found at: http://www.bicyclecards.com/how-to-play/hearts/
 
 ## Requirements
-###Libraries
   Python3 pyCardDeck  
   
