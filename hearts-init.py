@@ -1,9 +1,10 @@
 import pyCardDeck
 import collections
+import operator
 from typing import List
 import time
 from pyCardDeck.cards import PokerCard
-
+import itertools
 
 
 
@@ -16,7 +17,7 @@ class Player:
 	def __str__(self):
 		return self.name
 
-	def sort_hand(self):
+	#def sort_hand(self):
 
 
 
@@ -36,7 +37,7 @@ class HeartsGame:
 
 	def Hearts(self):
 		print("Game is Starting...")
-		time.sleep(5)
+		time.sleep(2)
 
 		print("Shuffling deck ...")
 		self.deck.shuffle()
@@ -88,16 +89,29 @@ class HeartsGame:
 		'''
 		print("\nYou are player: {}".format(player.name))
 		
+		player.hand.sort(key = operator.attrgetter("rank"), reverse = False)
+
 		spades, diamonds, hearts, clubs = [],[],[],[]
 		for card in player.hand:
 			if(card.suit == "Spades"):
-				spades.append(card)
+				spades.append(str(card))
 			elif(card.suit == "Diamonds"):
-				diamonds.append(card)
+				diamonds.append(str(card))
 			elif(card.suit == "Hearts"):
-				hearts.append(card)
+				hearts.append(str(card))
 			else:
-				clubs.append(card)
+				clubs.append(str(card))
+
+		for a,b,c,d in itertools.zip_longest(spades, diamonds, hearts, clubs):
+			#no_none = filter(None, (a,b,c,d))
+			print( (a,b,c,d) )
+			
+			#for i in (a,b,c,d):
+			#	if (i is None):
+			#		i = ""
+			
+			#print("{:12s}\t{:12s}\t{:12s}\t{:12s}".format(a,b,c,d))
+		#print(spades, diamonds, hearts, clubs)
 
 
 
