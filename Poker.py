@@ -11,6 +11,14 @@ class PokerCard:
 		'''
 		self.suit = suit
 		self.number = number
+		self.points = None
+
+		if self.suit == 'Hearts':
+			self.points = 1
+		elif self.suit == 'Spades' and self.number == 12:
+			self.points = 13
+		else:
+			self.points = 0
 
 	def __str__(self):
 
@@ -42,6 +50,31 @@ class PokerCard:
 			self.suit == other.suit and
 			self.number == other.number
 			)
+
+	def bigger_than(self,other):
+		if self.suit != other.suit:
+			return True
+		else:
+			if self.number > other.number:
+				return True
+			else:
+				return False
+
+
+	def __cmp__(self,other):
+		#	Compares PokerCard A to PokerCard B
+		#	if:
+		#		A.suit != B.suit --> Return A
+		#	else:
+		#		A.number > B.number --> Return A
+		#		A.number < B.number --> Return B
+
+		if eq(self,other):
+			return 0
+		elif self.suit != other.suit or self.number > other.number:
+			return 1
+		else:
+			return -1
 
 class Deck:
 	'''
