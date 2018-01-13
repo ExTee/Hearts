@@ -117,6 +117,7 @@ class HeartsGame():
 		Player 4: cards 39 to 51
 
 		This has essentially the same effect as distributing cards one by one, it speeds up computation
+		a
 		'''
 		a = 0
 		b = 13
